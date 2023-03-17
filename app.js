@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/generate', (req, res) => {
   const formData = req.body;
-  const calendar = ical({name: 'my first iCal'});
+  const calendar = ical({name: 'My Calendar'});
   const startTime = new Date(formData.start);
   const endTime = new Date(formData.end);
   const summary = formData.summary;
