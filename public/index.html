@@ -14,15 +14,15 @@
 <body class="body-warpper">
     <!-- Navigation -->
     <nav class="navbar">
-        <a href="#" class="nav-logo">Imraan's Tools</a>
+        <a href="#" class="nav-logo">Beta</a>
         <ul class="nav-menu">
-            <li class="nav-item">
-                <a href="https://imrn.dev" class="nav-link">My Site</a>
+            <!-- <li class="nav-item">
+                <a href="https://imrn.dev/?ref=calSite" class="nav-link">My Site</a>
             </li>
             <li class="nav-item">
-                <a href="https://imraan.in/blog" class="nav-link">My Blog</a>
-            </li>
-        
+                <a href="https://imraan.in/blog/?ref=calSite" class="nav-link">My Blog</a>
+            </li>-->
+
         </ul>
         <div class="hamburger">
             <span class="bar"></span>
@@ -37,14 +37,15 @@
             <div class="banner-flexbox">
                 <div class="banner-flex-item">
                     <h1 class="main-heading gradyText">Build Calendar Files</h1>
-                    <p class="main-des gradyText">Just fill up this form and generate calendar invites files on the fly</p>
+                    <p class="main-des gradyText">Just fill up this form and generate calendar invites files on the fly
+                    </p>
                     <div class="banner-cta-group">
                         <a class="banner-cta" href="#" rel="noopener noreferrer">Sign up for free</a>
                         <a class="banner-cta discover" href="#" rel="noopener noreferrer">Discover</a>
                     </div>
                 </div>
                 <div class="banner-flex-item">
-                    
+
                     <form action="/generate" method="POST">
                         <div class="mb-3">
                             <label for="summary" class="form-label">Event Title</label>
@@ -62,8 +63,8 @@
                             <label for="end" class="form-label">Event End Time</label>
                             <input type="datetime-local" id="end" name="end" class="form-control" required>
                         </div>
-                        
-                        
+
+
                         <div class="mb-3">
                             <label for="location" class="form-label">Event Location</label>
                             <input type="text" id="location" name="location" class="form-control" required>
@@ -84,11 +85,28 @@
     <!-- End Hero Banner -->
     <!-- Footer -->
     <footer class="footer">
-        <p>Copyright © Some name</p>
+        <p>Powered by <a href="https://imraan.in/?ref=calSite">Imran<a /></p>
     </footer>
     <!-- End Footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./main.js"></script>
+    <script type="text/javascript">
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        const navLink = document.querySelectorAll(".nav-link");
+
+        hamburger.addEventListener("click", mobileMenu);
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    </script>
 </body>
 
 </html>
